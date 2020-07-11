@@ -6,11 +6,12 @@ import {
 import { Appear, Image } from 'mdx-deck'
 import { github, vsDark } from "@code-surfer/themes";
 import img3core from './3-core-web-vitals.png'
+import imgExtensions from './extension.png'
 
 
 export const theme = vsDark;
 
-## [Web Vitals](https://web.dev/vitals/) - Case Study on [Reactjs](https://reactjs.org)
+## [Web Vitals](https://web.dev/vitals/) - ~~Case Study~~ implementation (Bonus [Reactjs](https://reactjs.org))
 
 ###  Web.dev [LIVE] Extended - GDG Bandung
 
@@ -63,13 +64,34 @@ export const theme = vsDark;
 
 ---
 
-## Library vs Web Extension
+### Web Vitals: Library vs Web Extension
+
+<ul>
+    <Appear>
+        <li> Data Lab </li>
+        <li> Data Lapangan </li>
+    </Appear>
+</ul>
+
+---
+
+### Extension 
+
+<Image 
+    alt="3 core web vitals"
+    src={imgExtensions}
+    style={{
+        width: '80vw',
+        height: '300px',
+        objectFit: 'fill',
+  }}
+  />
 
 ---
 
 <CodeSurferColumns>
 
-<Step subtitle="sourcecode of web-vitals">
+<Step title="Library" subtitle="sourcecode of web-vitals">
 
 ```js 2:6
 // https://github.com/GoogleChrome/web-vitals/blob/master/src/index.ts
@@ -84,5 +106,129 @@ export * from './types.js';
 
 </Step>
 
+<Step title="basic usage" >
+
+```js
+import {getCLS, getFCP, getFID,  getLCP, getTTFB} from 'web-vitals'
+```
+
+</Step>
+
+<Step title="example use web-vitals library" subtitle="https://github.com/facebook/create-react-app/master/packages/cra-template/template/src/reportWebVitals.js">
+
+```js file=./reportWebVitals.js
+```
+
+</Step>
+    
+<Step title="define function" subtitle="with paramater function">
+
+```js 1:2,10 file=./reportWebVitals.js
+```
+
+</Step>
+
+<Step title="import web-vitals library" subtitle="with lazy-import">
+
+```js 3,9 file=./reportWebVitals.js
+```
+
+</Step>
+
+<Step title="call core web-vitals API" subtitle="measure & report">
+
+```js 4:8 file=./reportWebVitals.js
+```
+
+</Step>
+
+<Step title="export">
+
+```js 13 file=./reportWebVitals.js
+```
+
+</Step>
+
+<Step title="Usage">
+
+```js 
+import reportWebVitals from 'reportWebVitals'
+
+reportWebVitals()
+```
+
+</Step>
+
+<Step title="example: create-react-app template">
+
+```js file=./cra-index.js
+```
+
+</Step>
+
+<Step title="example: create-react-app template">
+
+```js 6 file=./cra-index.js
+```
+
+</Step>
+
+<Step title="example: create-react-app template">
+
+```js 23 file=./cra-index.js
+```
+
+</Step>
+
+<Step title="metric">
+
+```js file=./types-metric.js
+```
+
+</Step>
+
+<Step title="metric.name">
+
+```js 19 file=./types-metric.js
+```
+
+</Step>
+
+<Step title="metric.value">
+
+```js 22 file=./types-metric.js
+```
+
+</Step>
+
+<Step title="Next.js 9.4: 📢 integrated web-vitals" subtitle="a new method called reportWebVitals">
+
+```js
+// a new method called reportWebVitals which can be exported from pages/_app.js
+
+// Will be called once for every metric that has to be reported.
+export function reportWebVitals(metric) {
+  // These metrics can be sent to any analytics service
+  console.log(metric)
+}
+
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+
+export default MyApp
+```
+
+</Step>
+
 </CodeSurferColumns>
 
+---
+
+## DEMO 🥳
+
+---
+
+## THANK YOU 👐
+
+[@ri7nz](https://rin.rocks)
