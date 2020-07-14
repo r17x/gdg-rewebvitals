@@ -91,7 +91,7 @@ export const theme = vsDark;
 
 <CodeSurferColumns>
 
-<Step title="Library" subtitle="sourcecode of web-vitals">
+<Step title="using web-vitals library" subtitle="sourcecode of web-vitals">
 
 ```js 2:6
 // https://github.com/GoogleChrome/web-vitals/blob/master/src/index.ts
@@ -159,6 +159,12 @@ reportWebVitals()
 
 </Step>
 
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns>
+
 <Step title="example: create-react-app template">
 
 ```js file=./cra-index.js
@@ -180,6 +186,12 @@ reportWebVitals()
 
 </Step>
 
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns>
+
 <Step title="metric">
 
 ```js file=./types-metric.js
@@ -194,12 +206,67 @@ reportWebVitals()
 
 </Step>
 
-<Step title="metric.value">
+<Step title="metric.delta">
 
-```js 22 file=./types-metric.js
+```js 26 file=./types-metric.js
 ```
 
 </Step>
+
+<Step title="metric.id">
+
+```js 32 file=./types-metric.js
+```
+
+</Step>
+
+<Step title="send to analytics" subtitle="https://www.virendrachandak.com/techtalk/how-to-track-web-vitals-in-google-analytics/">
+
+```js file=./sendToAnalytics.js
+```
+
+</Step>
+
+<Step title="get metric by key object">
+
+```js 2:4 file=./sendToAnalytics.js
+```
+
+</Step>
+
+<Step title="make sure you have global ga">
+
+```js 7 file=./sendToAnalytics.js
+```
+
+</Step>
+
+<Step title="pass name from metric">
+
+```js 8 file=./sendToAnalytics.js
+```
+
+</Step>
+
+<Step title="round delta from metric">
+
+```js 9:14 file=./sendToAnalytics.js
+```
+
+</Step>
+
+<Step title="set id by metric">
+
+```js 15:19 file=./sendToAnalytics.js
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurferColumns>
 
 <Step title="Next.js 9.4: 📢 integrated web-vitals" subtitle="a new method called reportWebVitals">
 
